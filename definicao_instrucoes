@@ -1,0 +1,213 @@
+Descricao das operacoes
+operando x = vj = rs
+operando y = vk = rt
+
+er alvo, tipo alvo , instrucao_alocar
+
+
+add: op 0 funct 32
+add er
+r type
+rd = rs + rt
+
+sllv: op 0 funct 4
+add er
+r type
+rd = rt << rs
+
+srlv: op 0 funct 6
+add er
+r type
+rd = rt >> rs
+
+addu: op 0 funct 33
+add er
+r type
+rd = rs + rt
+sem overflow
+
+sub: op 0 func 34
+add er
+r type
+rd = rs - rt
+
+subu: op 0 func 35
+add er
+r type
+rd = rs - rt
+sem overflow
+
+and: op 0 funct 36
+add er
+r type
+rd = rs & rt
+
+or: op 0 funct 37
+add er
+r type
+rd = rs | rt
+
+xor: op 0 funct 38
+add er
+r type
+rd = rs ^ rt
+
+nor: op 0 funct 39
+add er
+r type
+rd = ~(rs | rt)
+verificar esse aki
+
+slt: op 0 funct 42
+add er
+r type
+rd = rs < rt
+
+sltu: op 0 fuct 43
+add er
+r type
+rd = rs < rt
+unsigned
+
+jalr: op 0 funt 9
+add er
+r type
+rd(31, sempre) <- pc + 4
+program_counter <- rs
+
+mult: op 24
+mul er
+r type
+multu: faze
+div: fazer
+divu: fazer
+jr: fazer
+mfhi: fazer
+mthi: fazer
+mflo: fazer
+mtlo: fazer
+
+sll: op 0 funct 0
+add er
+r type
+rd = rt << sa
+
+srl: op 0 funct 2
+add er
+r type
+rd = rt << sa
+
+sra: op 0 funct 3
+add er
+r type
+rd = rt >> sa
+arrumar esse aki dpois nao sei a diferenca
+
+addi:op 8
+add er
+i type
+rt <- rs + imediato
+com overflow
+
+addiu: op 9
+add er
+i type
+rt <- rs + imediato
+sem overflow
+
+slti: op 10
+add er
+i type
+rt <- rs < imediato
+sem overflow
+
+sltiu: op 11
+add er
+i type
+rt <- rs < imediato
+
+andi: op 12
+add er
+i type
+rt = rs & imediato
+
+ori: op 13
+add er
+i type
+rt <- rs or mediato
+
+xori: op 14
+add er
+i type
+rt <- rs XOR imediato
+
+lui: op 15
+ler
+i type
+rt <- imediato << 16
+
+lw: op 35
+load er
+i type
+rt <- memory[rs+imediato]
+
+lb: op 32
+load er
+i type
+rt <- memory[rs+imediato](1 byte)
+
+lh: op 33
+load er
+i type
+rt <- memory[rs+imediato](2 byte)
+
+lbu: op 36
+load er
+i type
+rt <- (unsigned)memory[rs+imediato]
+
+lhu: op 37
+load er
+i type
+rt <- (unsigned)memory[rs+imediato](2byte)
+
+sw: op 43
+store er
+i type
+memory[rs+imediato] <- rt
+
+sh: op 41
+store er
+i type
+memory[rs+imediato] <- rt(2byte)
+
+sb: op 40
+store er
+i type
+memory[rs+imediato] <- rt(1byte)
+
+beq: op 4
+add er
+i type
+if rs == rt jmp
+fazer
+
+mul: op 28
+mul er
+r type
+rd = rs * rt
+
+bne: op 5
+add er
+i type
+if rs != rt jmp
+
+blez: op 6
+add er
+i type
+if rs <= 0 jmp
+
+bgtz: op 7
+add er
+i type
+if rs > 0 jump

@@ -1,0 +1,14 @@
+.data
+	a: .byte 10
+	b: .byte 12, 1, 2, 3
+	c: .byte 13
+	d: .byte 15
+.text
+	sub $gp, $gp, $gp
+	teste:
+	j teste
+	j prox
+	srl $gp, $zero, 1
+	add $zero, $zero, $zero
+	prox:
+	syscall
